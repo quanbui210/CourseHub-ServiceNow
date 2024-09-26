@@ -27,7 +27,7 @@ interface MySubscriptionProps {
                 <h4>{course?.title}</h4>
                 {/* <p>Subscribed by: {learner?.user_account.value}</p> */}
                 <p>Subscribed on: {subscription.subscription_date}</p>
-                <button style={{marginBottom: 10, fontSize: "12px", backgroundColor: "#ccc"}} onClick={handleClick}>
+                <button style={{marginBottom: 10, fontSize: "12px", backgroundColor: "#333"}} onClick={handleClick}>
                     {loading ? "Unsubscribing..." : unSubscribed ? "Unsubscribed" : "Unsubscribe"}
                 </button>
             </div>

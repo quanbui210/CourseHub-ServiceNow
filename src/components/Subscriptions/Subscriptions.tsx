@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom'
 
 export const Subscriptions = () => {
     const {items: subscriptions} = useItems<Subscription>("course_subscription")
-  
-
     return (
         <div>
            <Link to={'..'}>Go Back</Link>

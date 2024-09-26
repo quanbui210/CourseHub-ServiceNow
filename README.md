@@ -2,6 +2,7 @@
 
 A full-stack application that allows user to browse list of courses, subscribe and unsubscribe the courses. client built with React + TypeScript, backend built with ServiceNow API and ServiceNow Studio
 
+[Live](https://course-hub-service-dmsgf6bvt-quanbui210s-projects.vercel.app)
 
 ## Backend (ServiceNow)
 

@@ -1,6 +1,6 @@
 import { useAttachment, useCheckSubscription, useItems, useSubscribe} from "../../hooks";
 import { Course } from "../../types";
-import { Card, CardActions, CardMedia, CardContent} from "@mui/material";
+import { Card, CardActions, CardMedia, CardContent, duration} from "@mui/material";
 interface CourseProps {
     course: Course;
 }
@@ -10,6 +10,7 @@ export const Courses: React.FC<CourseProps> = ({course}) => {
     const {mutate} = useItems<Course>("course")
     const {loading, createSubscription, subscribed} = useSubscribe()
     const { isSubscribed, loading: checkLoading } = useCheckSubscription(course.sys_id as string, learnerId);
+    const disabled = isSubscribed || loading || checkLoading || subscribed
     const handleSubscribe = (): void => {
         createSubscription(course.sys_id as string, learnerId)
         mutate((currentCourses: Course[] = []) => {
@@ -21,16 +22,23 @@ export const Courses: React.FC<CourseProps> = ({course}) => {
             <CardMedia
                 image={image?.download_link} 
                 title={"course_image"} 
-                sx={{height: 180, width: 330, objectFit: "contain", padding: 2}} />
-            <CardContent>
-                <h4 style={{fontWeight: "bold"}}>{course.title}</h4>
-                <span style={{color: "red", fontSize: "11px"}}>{course.type}</span>
+                sx={{height: 180, width: 330, objectFit: "contain", padding:1}} />
+            <CardContent style={{height: 270}}>
+                <h4  style={{fontWeight: "bold", height: 35}}>{course.title}</h4>
+                <div style={{ fontSize: "11px"}}>Duration: {course.duration} days</div>
+                <span style={{color: "red", fontSize: "11px"}}>Learning type: {course.type}</span>
                 <p style={{fontStyle: "italic", fontSize: "14px"}}>{course.description}</p>
             </CardContent>
             <CardActions>
                 <button 
-                  disabled={isSubscribed || loading || checkLoading || subscribed}
-                  onClick={handleSubscribe} style={{fontSize: "13px", backgroundColor: "#CCC"}}>
+                  disabled={disabled}
+                  onClick={handleSubscribe}
+                  style={{
+                    fontSize: "13px", 
+                    backgroundColor: disabled ? "#ccc" : "#333", 
+                    color: "#fff",
+                    cursor: disabled ? "not-allowed" : "pointer"
+                  }}>
                     {loading ? "Subscribing..." : isSubscribed || subscribed ? "Subscribed" : "Subscribe"}
                 </button>
             </CardActions>
