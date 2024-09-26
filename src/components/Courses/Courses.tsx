@@ -1,6 +1,6 @@
 import { useAttachment, useCheckSubscription, useItems, useSubscribe} from "../../hooks";
 import { Course } from "../../types";
-import { Card, CardActions, CardMedia, CardContent, duration} from "@mui/material";
+import { Card, CardActions, CardMedia, CardContent} from "@mui/material";
 interface CourseProps {
     course: Course;
 }
