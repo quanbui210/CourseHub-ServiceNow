@@ -1,11 +1,11 @@
-import { useItem } from "../hooks/useItems";
-import { Course, Learner, Subscription } from "../types"
+import { useItem } from "../../hooks/useItems";
+import { Course, Learner, Subscription } from "../../types"
 
 interface MySubscriptionProps {
     subscription: Subscription;
   }
 
- const MySubscription: React.FC<MySubscriptionProps> = ({subscription}) =>  {
+ export const MySubscription: React.FC<MySubscriptionProps> = ({subscription}) =>  {
     const course = useItem<Course>("course",subscription.course.value)
     const learner = useItem<Learner>("learner", subscription.learner.value)
     return (
@@ -19,4 +19,3 @@ interface MySubscriptionProps {
     )
 }
 
-export default MySubscription
