@@ -51,7 +51,8 @@ auth: {
 ```
 
 - Get all records 
-*Used for retrieve list of courses and subscriptions*
+
+*Retrieve list of courses and subscriptions*
 ```
 REQUEST:
 GET https://dev183695.service-now.com/api/now/table/x_1540387{tableName}?sysparm_limit=10
@@ -116,6 +117,7 @@ Example response - course
 ```
 
 - Create a record 
+
 *Subscribe to a course, create a course*
 
 ```
@@ -151,6 +153,7 @@ Example response - subscription
 ```
 
 - Delete a record
+
 *Unsubscribe  a course*
 
 ```
@@ -167,6 +170,7 @@ Example response - subscription
 ```
 
 - Get attachment
+
 *Retrieve course image*
 
 ```
