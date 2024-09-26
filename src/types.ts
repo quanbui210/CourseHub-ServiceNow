@@ -1,11 +1,11 @@
 export interface Response {
-    sys_mod_count: string
-    sys_updated_on: string
-    sys_id: string
-    number: string
-    sys_created_on: string
-    sys_created_by: string
-    sys_tag: string
+    sys_mod_count?: string
+    sys_updated_on?: string
+    sys_id?: string
+    number?: string
+    sys_created_on?: string
+    sys_created_by?: string
+    sys_tag?: string
 }
 
 
