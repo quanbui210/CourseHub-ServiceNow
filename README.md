@@ -12,7 +12,7 @@ A full-stack application that allows user to browse list of courses, subscribe a
 ###  Configuration
  CORS rule
 - REST API: Table API [now/table], Attachment API [now/attachment]
-- Domain: localhost:5173
+- Domain: localhost:5173, https://course-hub-service-dmsgf6bvt-quanbui210s-projects.vercel.app
 - HTTP Methods: GET, POST, PUT, DELETE
 
  Access Control List
