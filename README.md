@@ -52,13 +52,13 @@ auth: {
 
 - Get all records 
 *Used for retrieve list of courses and subscriptions*
-```JSON
+```
 REQUEST:
 GET https://dev183695.service-now.com/api/now/table/x_1540387{tableName}?sysparm_limit=10
 ```
 
 ```JSON
-Example response (course)
+Example response - course
 200 OK
 {
   "result": [
@@ -84,7 +84,7 @@ Example response (course)
 ```
 
 - Get one record
-```JSON
+```
 REQUEST: 
 GET https://dev183695.service-now.com/api/now/table/{tableName}/{sys_id}
 
@@ -93,7 +93,7 @@ Content-Typeapplication/json
 Acceptapplication/json
 ```
 ``` JSON
-Example response (course):
+Example response - course
 200 OK
 {
   "result": {
@@ -126,7 +126,7 @@ Request body:
 ```
 
 ```JSON
-Example response (subscription)
+Example response - subscription
 201 CREATED
 {
   "result": {
@@ -154,13 +154,13 @@ Example response (subscription)
 *Unsubscribe  a course*
 
 ```
-REQUEST: 
+REQUEST
 
 DELETE https://dev183695.service-now.com/api/now/table/{tableName}/{sys_id}
 ```
 
 ```
-Example response (subscription)
+Example response - subscription
 
 204 No Content
 ""
@@ -169,13 +169,13 @@ Example response (subscription)
 - Get attachment
 *Retrieve course image*
 
-```JSON
+```
 REQUEST
 GET https://dev183695.service-now.com/api/now/attachment/{sys_id}
 ```
 
 ```JSON
-Example response ( course_image)
+Example response - course_image
 200 OK
 {
   "result": {
