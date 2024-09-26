@@ -38,7 +38,7 @@ export const useSubscribe= <T extends Subscription>() => {
     }
   };
 
-  return { subscription, loading, error, createSubscription, subscribed };
+  return { subscription, loading, error, createSubscription, subscribed, setSubscribed };
 };
 
 
@@ -98,5 +98,5 @@ export const useUnsubscribe = () =>{
             setLoading(false);
           }
         }
-      return {loading, unSubscribed, unSubscribe}
+      return {loading, unSubscribed, unSubscribe, setUnsubscribed}
 }
