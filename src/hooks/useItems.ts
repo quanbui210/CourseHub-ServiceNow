@@ -9,7 +9,7 @@ type Item = "learner" | "course" | "course_subscription"
 type ItemType = Course | Learner | Subscription
 
 
-export const baseUrl = "https://dev183695.service-now.com/api/now/table"
+export const baseUrl = "https://dev183695.service-now.com/api/now"
 
 const fetcher = async (url: string) => {
   const response = await axios.get(url, {
@@ -23,7 +23,7 @@ const fetcher = async (url: string) => {
 
 export const useItems = <T extends ItemType>(type: string) => {
   const { data, error, mutate } = useSWR<T[]>(
-      `${baseUrl}/x_1540387_course_s_${type}?sysparm_limit=10`,
+      `${baseUrl}/table/x_1540387_course_s_${type}?sysparm_limit=10`,
       fetcher
   );
 
