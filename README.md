@@ -6,7 +6,7 @@ A full-stack application that allows user to browse list of courses, subscribe a
 
   
 
-[Live](https://course-hub-service-now.vercel.app/)
+[Live URL](https://course-hub-service-now.vercel.app/)
 
   
 
@@ -34,7 +34,7 @@ CORS rule
   
 
 Access Control List
-
+Elevated to ```security_admin``` role
 ```
 Course Subscription x_1540387_course_s_course_subscription
 Type: record
@@ -432,5 +432,58 @@ Example response - course_image
 }
 
 }
+```
+
+
+## Frontend (React + TypeScript + Vite)
+
+#### Overview
+*Due to limit of time, I decided to build this app with custom technologies instead of ServiceNow UI Builder.*
+
+
+The client side of the web app is built with React, TypeScript and Vite, along with react-router for routing, Material UI for components, axios and swr for data fetching. Deployed on Vercel. 
+The app is built in a simple way to utilises the backend endpoints from ServiceNow Rest API. 
+From the web app, users can:
+- View the list of courses
+- Subscribe to courses
+- View list of subscriptions in "My courses" page
+- Unsubscribe to courses
+
+
+#### App structures
+There are 2 main folders which are
+- ```/components```:
+	-  Contains ```/Courses``` and ```/Subscriptions``` folders, which each contains
+- ```/Courses```
+	-  ```Courses.tsx```  to build the course item
+	- ```AllCourses.tsx``` to render the course items dynamically
+	- Both are exported through ```index.ts```
+- ```Subscriptions```
+	-  ```MySubscription.tsx```  to build the courses subscribed by the user
+	- ```Subscriptions.tsx``` to render the subscription items dynamically
+	- Both are exported through ```index.ts```
+- ```App.tsx```
+	- For implementing react-router routes
+
+
+
+#### Run the app
+To run the app, simply clone from GitHub, run ```npm install```, then create a ```.env``` file in the root directory as follow:
+
+
 
 ```
+VITE_SERVICENOW_USERNAME=admin
+VITE_SERVICENOW_PASSWORD=bI+R1LEna/6f
+```
+
+Then run ```npm run dev```. 
+
+
+
+
+
+
+----
+
+Thanks For Reading!!!!!!

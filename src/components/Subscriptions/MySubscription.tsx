@@ -23,7 +23,7 @@ interface MySubscriptionProps {
     return (
         <div style={{borderBottom: "1px solid #ccc"}}>
             <div>
-                <img src={image?.download_link} width={150} height={150}></img>
+                <img src={image?.download_link ?? "https://instructor-academy.onlinecoursehost.com/content/images/2023/05/How-to-Create-an-Online-Course-For-Free--Complete-Guide--6.jpg"} width={150} height={150}></img>
                 <h4>{course?.title}</h4>
                 {/* <p>Subscribed by: {learner?.user_account.value}</p> */}
                 <p>Subscribed on: {subscription.subscription_date}</p>

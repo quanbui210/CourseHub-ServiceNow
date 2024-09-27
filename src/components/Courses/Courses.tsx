@@ -20,7 +20,7 @@ export const Courses: React.FC<CourseProps> = ({course}) => {
     return (<div style={{textAlign:"center"}}>
         <Card sx={{ maxWidth: 345, margin: 2 }}>
             <CardMedia
-                image={image?.download_link} 
+                image={image?.download_link ?? "https://instructor-academy.onlinecoursehost.com/content/images/2023/05/How-to-Create-an-Online-Course-For-Free--Complete-Guide--6.jpg"} 
                 title={"course_image"} 
                 sx={{height: 180, width: 330, objectFit: "contain", padding:1}} />
             <CardContent style={{height: 270}}>
