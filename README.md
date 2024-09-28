@@ -12,6 +12,8 @@ A full-stack application that allows user to browse list of courses, subscribe a
 
 ## Backend (ServiceNow)
 
+
+Link to GitHub repo: https://github.com/quanbui210/CoursesAPI
   
   
 
