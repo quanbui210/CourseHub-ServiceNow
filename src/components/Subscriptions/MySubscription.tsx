@@ -20,6 +20,7 @@ interface MySubscriptionProps {
             return currentSubscriptions.filter(sub => sub.sys_id !== subscription.sys_id);
         }, false);
     }
+    console.log(course)
     return (
         <div style={{borderBottom: "1px solid #ccc"}}>
             <div>

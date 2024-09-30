@@ -37,7 +37,7 @@ export const useItems = <T extends ItemType>(type: string) => {
 //${baseUrl}/x_1540387_course_s_${type}/${itemId}
 export const useItem =  <T extends ItemType>(type: Item, itemId: string) => {
   const { data, error, mutate } = useSWR<T>(
-    `${baseUrl}/x_1540387_course_s_${type}/${itemId}`,
+    `${baseUrl}/table/x_1540387_course_s_${type}/${itemId}`,
     fetcher
 );
 
