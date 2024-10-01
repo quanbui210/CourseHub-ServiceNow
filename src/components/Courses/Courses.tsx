@@ -6,7 +6,7 @@ interface CourseProps {
 }
 const learnerId= "f46cd5a6833852107e535855eeaad3c6"
 export const Courses: React.FC<CourseProps> = ({course}) => {
-    const image = useAttachment(course.course_image)
+    const {data: image}= useAttachment(course.course_image)
     const {mutate} = useItems<Course>("course")
     const {loading, createSubscription, subscribed} = useSubscribe()
     const { isSubscribed, loading: checkLoading } = useCheckSubscription(course.sys_id as string, learnerId);

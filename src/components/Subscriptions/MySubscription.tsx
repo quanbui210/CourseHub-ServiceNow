@@ -12,7 +12,7 @@ interface MySubscriptionProps {
     // const {data: learner} = useItem<Learner>("learner", subscription.learner.value)
     const {loading, unSubscribed, unSubscribe} = useUnsubscribe()
     const {mutate} = useItems<Subscription>("course_subscription")
-    const image = useAttachment(course?.course_image as string)
+    const {data: image} = useAttachment(course?.course_image as string)
     // console.log(learner)
     const handleClick = ():void => {
         unSubscribe(subscription.sys_id as string)

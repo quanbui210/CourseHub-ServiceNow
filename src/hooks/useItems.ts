@@ -11,7 +11,7 @@ type ItemType = Course | Learner | Subscription
 
 export const baseUrl = "https://dev183695.service-now.com/api/now"
 
-const fetcher = async (url: string) => {
+export const fetcher = async (url: string) => {
   const response = await axios.get(url, {
       auth: {
           username,
@@ -39,7 +39,7 @@ export const useItem =  <T extends ItemType>(type: Item, itemId: string) => {
   const { data, error, mutate } = useSWR<T>(
     `${baseUrl}/table/x_1540387_course_s_${type}/${itemId}`,
     fetcher
-);
+  );
 
   return {data, error, mutate};
 }
